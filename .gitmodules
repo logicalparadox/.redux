@@ -1,3 +1,9 @@
 [submodule ".vim/lib/bundle/vim-airline"]
 	path = .vim/lib/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule ".vim/lib/bundle/vim-bufferline"]
+	path = .vim/lib/bundle/vim-bufferline
+	url = https://github.com/bling/vim-bufferline.git
+[submodule ".vim/lib/bundle/ctrlp.vim"]
+	path = .vim/lib/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git

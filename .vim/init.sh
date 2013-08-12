@@ -8,4 +8,4 @@ cd ~
 ln -sf $VIM_INIT_DIR/.vimrc .vimrc
 ln -sf $VIM_INIT_DIR/lib .vim
 
-echo "Vim installed."
+echo "Vim installed from $VIM_INIT_DIR."
