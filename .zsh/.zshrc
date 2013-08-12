@@ -29,5 +29,8 @@ chpwd_functions+='chpwd_update_git_vars'
 # Set the prompt.
 PROMPT=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
 
+# Plugins
+source ~/.zsh/plugins/git-flow-completion.zsh
+
 # NVM
 source ~/.nvm/nvm.sh
