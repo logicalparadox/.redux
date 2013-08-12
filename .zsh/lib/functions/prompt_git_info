@@ -1,0 +1,21 @@
+if [ -n "$__CURRENT_GIT_BRANCH" ]; then
+    local s="("
+    s+="$__CURRENT_GIT_BRANCH"
+    case "$__CURRENT_GIT_BRANCH_STATUS" in
+        ahead)
+        s+="â"
+        ;;
+        diverged)
+        s+="â"
+        ;;
+        behind)
+        s+="â"
+        ;;
+    esac
+    if [ -n "$__CURRENT_GIT_BRANCH_IS_DIRTY" ]; then
+        s+="â¡"
+    fi
+    s+=")"
+ 
+    printf " %s%s" "%{${fg[yellow]}%}" $s
+fi
