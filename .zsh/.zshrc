@@ -28,3 +28,6 @@ chpwd_functions+='chpwd_update_git_vars'
  
 # Set the prompt.
 PROMPT=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
+
+# NVM
+source ~/.nvm/nvm.sh
