@@ -7,3 +7,9 @@
 [submodule ".vim/lib/bundle/ctrlp.vim"]
 	path = .vim/lib/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/lib/bundle/nerdtree"]
+	path = .vim/lib/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/lib/bundle/vim-easymotion"]
+	path = .vim/lib/bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git

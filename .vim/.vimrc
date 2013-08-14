@@ -60,7 +60,6 @@ nnoremap <leader>[ <i{<CR>
 
 """ Remap command key
 nnoremap ; :
-
 cmap w!! %!sudo tee > /dev/null %
 
 """ Clear search highlighting
@@ -144,3 +143,20 @@ function! SetArrowKeysAsTextShifters()
 endfunction
 
 call SetArrowKeysAsTextShifters()
+
+""" F Key Mappings
+nnoremap <silent> <F7>  :NERDTreeToggle<CR>
+
+""" NERDTree Options
+map <leader>e :NERDTreeFind<CR>
+nmap <leader>nt :NERDTreeFind<CR>
+let NERDTreeMinimalUI=1
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+
+""" EasyMotion
+let g:EasyMotion_leader_key = 'm'
