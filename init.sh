@@ -9,4 +9,18 @@ cd ~
 ln -sf $INIT_DIR/.config .config
 ln -sf $INIT_DIR/.xinitrc .xinitrc
 
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+# Dev Tools
+sudo apt-get install -y build-essential 
+sudo apt-get install -y libssl-dev 
+sudo apt-get install -y libreadline6-dev
+sudo apt-get install -y libbz2-dev
+sudo apt-get install -y libsqlite3-dev 
+sudo apt-get install -y zlib1g-dev
+
+if [ ! -d ~/.nvm ]; then
+  git clone https://github.com/creationix/nvm.git ~/.nvm
+fi
+
+if [ ! -d ~/.pyenv ]; then
+  git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+fi
