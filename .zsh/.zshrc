@@ -34,5 +34,9 @@ PROMPT=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
 # Plugins
 source ~/.zsh/plugins/git-flow-completion.zsh
 
+# Python Env
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+
 # NVM
 source ~/.nvm/nvm.sh
