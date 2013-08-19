@@ -6,6 +6,7 @@ export EDITOR=`which vim`
 
 # Import Aliases
 source ~/.zsh/alias.zsh
+source ~/.zsh/colorscheme.zsh
 
 # Initialize colors.
 autoload -U colors
