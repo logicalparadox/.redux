@@ -10,6 +10,7 @@ ln -sf $INIT_DIR/.config .config
 ln -sf $INIT_DIR/.xinitrc .xinitrc
 
 # Dev Tools
+sudo apt-get install -y curl
 sudo apt-get install -y build-essential 
 sudo apt-get install -y libssl-dev 
 sudo apt-get install -y libreadline6-dev
