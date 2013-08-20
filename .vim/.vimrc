@@ -42,6 +42,7 @@ set nocompatible
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'scrooloose/nerdtree'
     Bundle 'Lokaltog/vim-distinguished'
+    Bundle 'moll/vim-node'
 
     """ }}}
     """ Installing plguins the first time {{{
