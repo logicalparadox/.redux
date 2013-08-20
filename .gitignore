@@ -2,3 +2,5 @@
 .config/lib/ranger/bookmarks
 .config/lib/ranger/history
 .config/lib/ranger/tagged
+
+.ratpoison_history
