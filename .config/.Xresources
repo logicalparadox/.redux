@@ -1,17 +1,17 @@
 
 ! F O N T S ==============================================================
 !
-!Xft.autohint: 0
-!Xft.lcdfilter:  lcddefault
-!Xft.hintstyle:  hintfull
-!Xft.hinting: 1
-!Xft.antialias: 1
-!Xft.dpi: 96
-!Xft.rgba: rgb
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.dpi: 96
+Xft.rgba: rgb
 
-!Xft*dpi:                96
-!Xft*antialias:          true
-!Xft*hinting:            full
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
  
 
 ! U R X V T ==============================================================
@@ -63,84 +63,54 @@ URxvt*highlightTextColor: #151515
 
 ! C O L O R S E T ' S ====================================================
 
-! inspired/based on Railscasts Textmate theme
-! http://railscasts.coM
+! Tomorrow-Night Palette
+#define t_background #1D1F21
+#define t_current_line #282A2E
+#define t_selection #373B41
+#define t_foreground #C5C8C6
+#define t_comment #707880
+#define t_red #CC6666
+#define t_orange #DE935F
+#define t_yellow #F0C674
+#define t_green #B5BD68
+#define t_aqua #8ABEB7
+#define t_blue #81A2BE
+#define t_purple #B294BB
 
-! Lighter COLORSET
+*background: t_background
+*foreground: t_foreground
 
-*foreground: #dddddd
-*background: #151515
+! black
+*color0: t_current_line
+*color8: t_selection
 
-!black
-*color0:     #393939
-*color8:     #474747
+! red
+*color1: #A54242
+*color9: t_red
 
-!red
-*color1:     #FF9F95
-*color9:     #FF8D80
+! green
+*color2: #8C9440
+*color10: t_green
 
-!green
-*color2:     #E2FFC7
-*color10:    #DBFFB3
+! yellow
+*color3: t_orange
+*color11: t_yellow
 
-!yellow
-*color3:     #FFFFB9
-*color11:    #FFBE64
+! blue
+*color4: #5F819D
+*color12: t_blue
 
-!blue
-*color4:     #A8CEEA
-*color12:    #7EB6FF
+! magenta
+*color5: #85678F
+*color13: t_purple
 
-!magenta
-*color5:     #E2B5CC
-*color13:    #E296FF
+! cyan
+*color6: #5E8D87
+*color14: t_aqua
 
-!cyan
-*color6:     #C2EFFF
-*color14:    #9CE9FF
-
-!white
-*color7:     #dddddd
-*color15:    #dddddd
-
-
-!! Darker COLORSET
-
-!*foreground: #dddddd
-!*background: #151515
- 
-!black
-!*color0: #393939
-!*color8: #474747
- 
-!red
-!*color1: #da4939
-!*color9: #ff6c5c
- 
-!green
-!*color2: #519f50
-!*color10: #a5c261
- 
-!yellow
-!*color3: #cc7833
-!*color11: #bc9458
- 
-!blue
-!*color4: #6d9cbe
-!*color12: #d0d0ff
- 
-!magenta
-!*color5: #9f5079
-!*color13: #a761c2
- 
-!cyan
-!*color6: #435d75
-!*color14: #6e98a4
- 
-!white
-!*color7: #dddddd
-!*color15: #dddddd
-
+! white
+*color7: t_comment
+*color15: t_foreground
 
 ! 2 5 6 - C O L O R S =====================================================
 

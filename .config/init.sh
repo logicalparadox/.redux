@@ -5,6 +5,7 @@ CONFIG_INIT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 sudo apt-get install -y awesome
 sudo apt-get install -y rxvt-unicode-256color
 sudo apt-get install -y unclutter
+
 sudo apt-get install -y ranger
 sudo apt-get install -y caca-utils highlight atool w3m poppler-utils mediainfo
 
