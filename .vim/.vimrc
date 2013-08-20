@@ -41,8 +41,8 @@ set nocompatible
     " Bundles
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'scrooloose/nerdtree'
-    Bundle 'Lokaltog/vim-distinguished'
     Bundle 'moll/vim-node'
+    Bundle 'w0ng/vim-hybrid'
 
     """ }}}
     """ Installing plguins the first time {{{
@@ -110,7 +110,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType c,cpp,javahp,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 """ Theme optsion
-colorscheme distinguished
+colorscheme hybrid
 
 """ Indent/unident block (,]) (,[)
 nnoremap <leader>] >i{<CR>
