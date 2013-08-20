@@ -1,7 +1,64 @@
-""" Setups pathogen loading
-runtime! autoload/pathogen.vim
-silent! call pathogen#helptags()
-silent! call pathogen#runtime_append_all_bundles()
+
+"vimconf is not ci-compatible
+set nocompatible
+
+""" Automatically make needed files and folders on first run
+""" If you don't run *nix you're on your own (as in remove this) {{{
+    call system("mkdir -p $HOME/.vim/{backuplugin,undo}")
+    if !filereadable($HOME . "/.vimrc.bundles") | call system("touch $HOME/.vimrc.bundles") | endif
+    if !filereadable($HOME . "/.vimrc.first") | call system("touch $HOME/.vimrc.first") | endif
+    if !filereadable($HOME . "/.vimrc.last") | call system("touch $HOME/.vimrc.last") | endif
+""" }}}
+
+""" Vundle plugin manager {{{
+    """ Automatically setting up Vundle, taken from
+    """ http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/ {{{
+        let has_vundle=1
+        if !filereadable($HOME."/.vim/bundle/vundle/README.md")
+            echo "Installing Vundle..."
+            echo ""
+            silent !mkdir -p $HOME/.vim/bundle
+            silent !git clone https://github.com/gmarik/vundle $HOME/.vim/bundle/vundle
+            let has_vundle=0
+        endif
+    """ }}}
+
+    """ Initialize Vundle {{{
+        filetype off                                " required to init
+        set rtp+=$HOME/.vim/bundle/vundle/          " include vundle
+        call vundle#rc()                            " init vundle
+    """ }}}
+
+    " Recursive vundle, omg!
+    Bundle 'gmarik/vundle'
+
+    """ Local bundles (and only bundles in this file!) {{{{
+        if filereadable($HOME."/.vimrc.bundles")
+            source $HOME/.vimrc.bundles
+        endif
+    """ }}}
+
+    " Bundles
+    Bundle 'Lokaltog/vim-easymotion'
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'Lokaltog/vim-distinguished'
+
+    """ }}}
+    """ Installing plguins the first time {{{
+        if has_vundle == 0
+            echo "Installing Bundles, please ignore key map error messages"
+            echo ""
+            :BundleInstall
+        endif
+    """ }}}
+""" }}} 
+
+""" Local beginning config, only use for prerequisites as it will be
+""" overwritten by anything below {{{{
+    if filereadable($HOME."/.vimrc.first")
+        source $HOME/.vimrc.first
+    endif
+""" }}}
 
 """ Change mapleader
 let mapleader=","
