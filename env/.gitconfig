@@ -1,0 +1,14 @@
+[user]
+	email = jake@alogicalparadox.com
+	name = Jake Luer
+[github]
+  user = logicalparadox
+[alias]
+  co = checkout
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[core]
+  excludesfile = ~/.gitignore_global

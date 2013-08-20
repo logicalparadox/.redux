@@ -12,14 +12,24 @@ sudo apt-get install -y libbz2-dev
 sudo apt-get install -y libsqlite3-dev 
 sudo apt-get install -y zlib1g-dev
 
+# Local Configs
+cd ~
+ln -sf $INIT_DIR/env/.gitconfig .gitconfig
+ln -sf $INIT_DIR/env/.gitignore_global .gitignore_global
+cd $INIT_DIR
 
+# Sub-modules
 sh $INIT_DIR/.zsh/init.sh
 sh $INIT_DIR/.vim/init.sh
 
+# Python Env
 if [ ! -d ~/.pyenv ]; then
   git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+# TODO: auto config version
 fi
 
+# Node.js Env
 if [ ! -d ~/.nvm ]; then
   git clone https://github.com/creationix/nvm.git ~/.nvm
+# TODO: auto config version
 fi
