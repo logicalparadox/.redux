@@ -12,10 +12,14 @@ sudo apt-get install -y libbz2-dev
 sudo apt-get install -y libsqlite3-dev 
 sudo apt-get install -y zlib1g-dev
 
+# Tmux 
+sudo apt-get install -y tmux
+
 # Local Configs
 cd ~
 ln -sf $INIT_DIR/env/.gitconfig .gitconfig
 ln -sf $INIT_DIR/env/.gitignore_global .gitignore_global
+ln -sf $INIT_DIR/env/.tmux.conf .tmux.conf
 cd $INIT_DIR
 
 # Sub-modules
