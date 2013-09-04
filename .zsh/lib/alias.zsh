@@ -19,7 +19,7 @@ alias cpz='rsync -PrlpEz'
 # LS
 alias l='ls -Xp --color=auto'
 alias ls='ls -Xp --color=auto'
-alias ll='ls -alh'
+alias ll='ls++ -a'
 
 # MKDIR
 alias mk='mkdir -p'

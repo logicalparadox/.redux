@@ -20,6 +20,7 @@ cd ~
 ln -sf $INIT_DIR/env/.gitconfig .gitconfig
 ln -sf $INIT_DIR/env/.gitignore_global .gitignore_global
 ln -sf $INIT_DIR/env/.tmux.conf .tmux.conf
+ln -sf $INIT_DIR/env/.ls++.conf .ls++.conf
 cd $INIT_DIR
 
 # Sub-modules
