@@ -1,43 +1,39 @@
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+#==============================================================
+#
+# C O N F I G U R A T I O N  F O R  Z S H
+#
 
-export EDITOR=`which vim`
+#=-=-=-=-=-=-=
+# load stuffs
+#=-=-=-=-=-=-=
 
-# Import Aliases
-source ~/.zsh/alias.zsh
-source ~/.zsh/colorscheme.zsh
+autoload -U colors && colors
+autoload -U compinit && compinit
+autoload -U vcs_info && vcs_info
 
-# Initialize colors.
-autoload -U colors
-colors
- 
-# Allow for functions in the prompt.
-setopt PROMPT_SUBST
- 
-# Autoload zsh functions.
-fpath=(~/.zsh/functions $fpath)
-autoload -U ~/.zsh/functions/*(:t)
- 
-# Enable auto-execution of functions.
-typeset -ga preexec_functions
-typeset -ga precmd_functions
-typeset -ga chpwd_functions
- 
-# Append git functions needed for prompt.
-preexec_functions+='preexec_update_git_vars'
-precmd_functions+='precmd_update_git_vars'
-chpwd_functions+='chpwd_update_git_vars'
- 
-# Set the prompt.
-PROMPT=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
+zmodload zsh/complist
+zmodload zsh/terminfo
 
-# Plugins
-source ~/.zsh/plugins/git-flow-completion.zsh
+# setopt
+setopt \
+  autocd \
+  ksh_glob \
+  extendedglob \
+  prompt_subst \
+  inc_append_history
 
-# Python Env
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+bindkey -v
 
-# NVM
-source ~/.nvm/nvm.sh
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Import seperate config files
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+for r in $HOME/.zsh/*.zsh; do
+  if [[ $DEBUG > 0 ]]; then
+    echo "zsh: sourcing $r"
+  fi
+  source $r
+done
+
+eval $( dircolors -b $HOME/.zsh/LS_COLORS )
+export LS_COLORS

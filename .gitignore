@@ -3,4 +3,6 @@
 .config/lib/ranger/history
 .config/lib/ranger/tagged
 
+.zsh/lib/history
+
 .ratpoison_history
