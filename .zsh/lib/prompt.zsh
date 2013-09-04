@@ -15,13 +15,14 @@ setprompt() {
   local PWD="%F{7}$(collapse_pwd)%f"
   local TTY="%F{4}%y%f"
   local EXIT="%(?..%F{202}%?%f)"
-  local PRMPT="λ ${USER}@$HOST ${PWD} ${vcs_info_msg_0_} %F{202}»%f "
-#${EXIT} %F{202}%f "
+  local PRMPT="λ ${USER}@$HOST ${PWD}"
+  local PRMPTE="%F{202}»%f "
 
-#  if [[ "${vcs_info_msg_0_}" == "" ]]; then
-    PROMPT="$PRMPT"
-#  else
-#    PROMPT="${vcs_info_msg_0_}
-#$PRMPT"
-#  fi
+  if [[ "${vcs_info_msg_0_}" == "" ]]; then
+    PROMPT="$PRMPT
+$PRMPTE"
+  else
+    PROMPT="$PRMPT ${vcs_info_msg_0_}
+$PRMPTE"
+  fi
 }
