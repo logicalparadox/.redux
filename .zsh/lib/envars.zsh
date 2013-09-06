@@ -10,3 +10,8 @@ export DISPLAY=:0
 export SHELL='/bin/zsh'
 export EDITOR='vim'
 export MANPAGER='vimpager'
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+
+source ~/.nvm/nvm.sh
