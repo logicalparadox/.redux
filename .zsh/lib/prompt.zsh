@@ -11,21 +11,15 @@ function collapse_pwd {
 
 setprompt() {
   local USER="%(#.%F{1}.%F{3})%n%f"
-  local HOST="%F{1}%M%f"
-  local PWD="%F{7}$(collapse_pwd)%f"
+  local HOST="%F{3}%M%f"
+  local PWD="%F{2}$(collapse_pwd)%f"
   local TTY="%F{4}%y%f"
   local EXIT="%(?..%F{202}%?%f)"
-  local PRMPT="${USER}@$HOST ${PWD}"
-  local PRMPTE="%F{202}λ%f "
+  local PRMPT="%F{202}λ%f $HOST ${PWD}"
 
   if [[ "${vcs_info_msg_0_}" == "" ]]; then
-    PROMPT="
-$PRMPT
-$PRMPTE"
+    PROMPT="$PRMPT %F{202}→%f "
   else
-    PROMPT="
-$PRMPT 
-${vcs_info_msg_0_}
-$PRMPTE"
+    PROMPT="$PRMPT ${vcs_info_msg_0_} %F{202}→%f "
   fi
 }
