@@ -1,8 +1,9 @@
 #!/bin/bash
 
 ZSH_INIT_DIR="$( cd "$( dirname "$0" )" && pwd )"
+source $ZSH_INIT_DIR/../xpkg.sh
 
-sudo apt-get install -y zsh
+xpkg_install zsh
 
 cd ~
 ln -sf $ZSH_INIT_DIR/.zshrc .zshrc
