@@ -1,6 +1,9 @@
 # Sudo
 alias s='sudo'
 
+# Arch
+alias yt='yaourt'
+
 # CD
 alias cd..='cd ..'
 alias ..='cd ..'
