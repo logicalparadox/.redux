@@ -43,6 +43,7 @@ set nocompatible
     Bundle 'scrooloose/nerdtree'
     Bundle 'moll/vim-node'
     Bundle 'w0ng/vim-hybrid'
+    Bundle 'wting/rust.vim'
 
     """ }}}
     """ Installing plguins the first time {{{
