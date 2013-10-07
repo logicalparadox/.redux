@@ -37,3 +37,9 @@ done
 
 eval $( dircolors -b $HOME/.zsh/LS_COLORS )
 export LS_COLORS
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts/rvm
+
+# added by travis gem
+source /home/paradox/.travis/travis.sh
