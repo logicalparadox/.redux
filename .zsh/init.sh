@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ZSH_INIT_DIR="$( cd "$( dirname "$0" )" && pwd )"
-source $ZSH_INIT_DIR/../xpkg.sh
+. $ZSH_INIT_DIR/../xpkg.sh
 
 xpkg_install zsh
 
