@@ -43,6 +43,7 @@ set nocompatible
     Bundle 'scrooloose/nerdtree'
     Bundle 'moll/vim-node'
     Bundle 'w0ng/vim-hybrid'
+    Bundle 'jelera/vim-javascript-syntax'
     Bundle 'wting/rust.vim'
 
     """ }}}
@@ -103,6 +104,13 @@ map <leader>p :set invpaste paste?<CR>
 
 filetype on
 syn on
+
+""" Colums
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 """ Hard code tabs in Makefiles
 autocmd FileType make setlocal noexpandtab
