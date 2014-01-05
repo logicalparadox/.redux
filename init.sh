@@ -15,6 +15,11 @@ case $XPKG_MANAGER in
     ;;
   "apt-get")
     xpkg_install build-essential
+    xpkg_install libssl-dev
+    xpkg_install libreadline6-dev
+    xpkg_install libbz2-dev
+    xpkg_install libsqlite3-dev
+    xpkg_install zlib1g-dev
 esac
 
 # Same package names
