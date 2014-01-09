@@ -12,6 +12,9 @@ sudo apt-get install -y caca-utils highlight atool w3m poppler-utils mediainfo
 cd ~
 ln -sf $CONFIG_INIT_DIR/.xinitrc .xinitrc
 ln -sf $CONFIG_INIT_DIR/.Xresources .Xresources
-ln -sf $CONFIG_INIT_DIR/lib .config
+
+mkdir -p .config/
+ln -sf $CONFIG_INIT_DIR/lib/awesome .config/awesome
+ln -sf $CONFIG_INIT_DIR/lib/ranger .config/ranger
 
 echo "Desktop configured."
