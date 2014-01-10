@@ -59,4 +59,4 @@ alias duch='du -ch | grep insgesamt |\
   sed -e "s_[0-9]*,[0-9]*[B|G|K|M|T]_\x1b[32m&\x1b[0m_"'
 
 # node.js harmony
-alias node='node --use-strict $(node --v8-options | grep harm | awk '{print $1}'| xargs)'
+alias node='node --harmony --harmony_typeof'
