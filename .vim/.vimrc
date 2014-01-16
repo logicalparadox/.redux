@@ -44,6 +44,7 @@ set nocompatible
     Bundle 'moll/vim-node'
     Bundle 'w0ng/vim-hybrid'
     Bundle 'wting/rust.vim'
+    Bundle 'justinmk/vim-syntax-extra'
 
     """ }}}
     """ Installing plguins the first time {{{
