@@ -43,8 +43,12 @@ set nocompatible
     Bundle 'scrooloose/nerdtree'
     Bundle 'moll/vim-node'
     Bundle 'w0ng/vim-hybrid'
+    Bundle 'jelera/vim-javascript-syntax'
     Bundle 'wting/rust.vim'
     Bundle 'justinmk/vim-syntax-extra'
+    Bundle 'plasticboy/vim-markdown'
+    Bundle 'junegunn/goyo.vim'
+    Bundle 'amix/vim-zenroom2'
 
     """ }}}
     """ Installing plguins the first time {{{
@@ -96,14 +100,29 @@ set tabstop=2
 set undolevels=1000
 set virtualedit=onemore
 
+" disable Background Color Erase (BCE) so that color schemes
+" render properly when inside 256-color tmux and GNU screen.
+" see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+if &term =~ '256color'
+  set t_ut=
+endif
+
 """ Paste toggle (,p)
 set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
+nnoremap <silent> <leader>z :Goyo<cr>
 
 """ Options
 
 filetype on
 syn on
+
+""" Colums
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 """ Hard code tabs in Makefiles
 autocmd FileType make setlocal noexpandtab

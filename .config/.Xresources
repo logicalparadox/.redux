@@ -61,7 +61,7 @@ URxvt*highlightTextColor: #151515
 !URxvt*shading: 40
 
 
-! C O L O R S E T ' S ====================================================
+! C O L O R S E T S ====================================================
 
 ! Tomorrow-Night Palette
 #define t_background #1D1F21

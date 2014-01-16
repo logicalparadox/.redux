@@ -13,14 +13,21 @@ case $XPKG_MANAGER in
     xpkg_install sqlite
     xpkg_install readline
     ;;
+  "apt-get")
+    xpkg_install build-essential
+    xpkg_install libssl-dev
+    xpkg_install libreadline6-dev
+    xpkg_install libbz2-dev
+    xpkg_install libsqlite3-dev
+    xpkg_install zlib1g-dev
 esac
 
 # Same package names
 xpkg_install curl
 xpkg_install tmux
 
-sh $INIT_DIR/.zsh/init.sh
-sh $INIT_DIR/.vim/init.sh
+$INIT_DIR/.zsh/init.sh
+$INIT_DIR/.vim/init.sh
 
 # Local Configs
 cd ~

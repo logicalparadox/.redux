@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VIM_INIT_DIR="$( cd "$( dirname "$0" )" && pwd )"
-source $VIM_INIT_DIR/../xpkg.sh
+. $VIM_INIT_DIR/../xpkg.sh
 
 xpkg_install vim
 
