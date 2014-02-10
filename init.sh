@@ -43,6 +43,12 @@ if [ ! -d ~/.pyenv ]; then
 # TODO: auto config version
 fi
 
+# Ruby Env
+if [ ! -d ~/.rvm ]; then
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+# TODO: auto config version
+fi
+
 # Node.js Env
 if [ ! -d ~/.nvm ]; then
   git clone https://github.com/creationix/nvm.git ~/.nvm
