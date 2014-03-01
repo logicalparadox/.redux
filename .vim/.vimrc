@@ -41,6 +41,7 @@ set nocompatible
     " Bundles
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'scrooloose/nerdtree'
+    Bundle 'digitaltoad/vim-jade'
     Bundle 'moll/vim-node'
     Bundle 'w0ng/vim-hybrid'
     Bundle 'jelera/vim-javascript-syntax'
@@ -49,6 +50,7 @@ set nocompatible
     Bundle 'plasticboy/vim-markdown'
     Bundle 'junegunn/goyo.vim'
     Bundle 'amix/vim-zenroom2'
+    Bundle 'dart-lang/dart-vim-plugin'
 
     """ }}}
     """ Installing plguins the first time {{{
