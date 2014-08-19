@@ -46,7 +46,6 @@ fi
 # Ruby Env
 if [ ! -d ~/.rvm ]; then
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 # TODO: auto config version
 fi
 
@@ -55,3 +54,4 @@ if [ ! -d ~/.nvm ]; then
   git clone https://github.com/creationix/nvm.git ~/.nvm
 # TODO: auto config version
 fi
+
