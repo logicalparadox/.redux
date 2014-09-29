@@ -1,9 +1,9 @@
-
 "vimconf is not ci-compatible
 set nocompatible
 
 """ Automatically make needed files and folders on first run
 """ If you don't run *nix you're on your own (as in remove this) {{{
+
     call system("mkdir -p $HOME/.vim/{backuplugin,undo}")
     if !filereadable($HOME . "/.vimrc.bundles") | call system("touch $HOME/.vimrc.bundles") | endif
     if !filereadable($HOME . "/.vimrc.first") | call system("touch $HOME/.vimrc.first") | endif
@@ -30,7 +30,7 @@ set nocompatible
     """ }}}
 
     " Recursive vundle, omg!
-    Bundle 'gmarik/vundle'
+    Plugin 'gmarik/vundle'
 
     """ Local bundles (and only bundles in this file!) {{{{
         if filereadable($HOME."/.vimrc.bundles")
@@ -38,26 +38,41 @@ set nocompatible
         endif
     """ }}}
 
-    " Bundles
-    Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'digitaltoad/vim-jade'
-    Bundle 'moll/vim-node'
-    Bundle 'w0ng/vim-hybrid'
-    Bundle 'jelera/vim-javascript-syntax'
-    Bundle 'wting/rust.vim'
-    Bundle 'justinmk/vim-syntax-extra'
-    Bundle 'plasticboy/vim-markdown'
-    Bundle 'junegunn/goyo.vim'
-    Bundle 'amix/vim-zenroom2'
-    Bundle 'dart-lang/dart-vim-plugin'
+    """ Plugins {{{
+
+        " Theme stuff
+        Plugin 'w0ng/vim-hybrid'
+        Plugin 'itchyny/lightline.vim'
+
+        " Ease of use
+        Plugin 'Lokaltog/vim-easymotion'
+        Plugin 'scrooloose/nerdtree'
+        Plugin 'scrooloose/nerdcommenter'
+        Plugin 'junegunn/goyo.vim'
+
+        " Bells
+        Plugin 'tpope/vim-fugitive'
+        Plugin 'Valloric/YouCompleteMe'
+        Plugin 'SirVer/ultisnips'
+        Plugin 'majutsushi/tagbar'
+
+        " Language support
+        Plugin 'digitaltoad/vim-jade'
+        Plugin 'jelera/vim-javascript-syntax'
+        Plugin 'wting/rust.vim'
+        Plugin 'justinmk/vim-syntax-extra'
+        Plugin 'dart-lang/dart-vim-plugin'
+        Plugin 'plasticboy/vim-markdown'
+        Plugin 'honza/dockerfile.vim'
+        Plugin 'fatih/vim-go'
 
     """ }}}
-    """ Installing plguins the first time {{{
+
+    """ Installing plugins the first time {{{
         if has_vundle == 0
-            echo "Installing Bundles, please ignore key map error messages"
+            echo "Installing Plugins, please ignore key map error messages"
             echo ""
-            :BundleInstall
+            :PluginInstall
         endif
     """ }}}
 """ }}} 
@@ -71,6 +86,9 @@ set nocompatible
 
 """ Change mapleader
 let mapleader=","
+
+""" Statusline ?
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 """ Basic Configuration
 set autochdir
@@ -112,12 +130,12 @@ endif
 """ Paste toggle (,p)
 set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
-nnoremap <silent> <leader>z :Goyo<cr>
 
 """ Options
 
 filetype on
-syn on
+filetype plugin on
+syntax on
 
 """ Colums
 if exists('+colorcolumn')
@@ -241,3 +259,56 @@ let NERDTreeKeepTreeInNewTab=1
 
 """ EasyMotion
 let g:EasyMotion_leader_key = 'm'
+
+""" GO
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_command = "gofmt"
+
+
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>s <Plug>(go-def-split)
+au FileType go nmap <Leader>v <Plug>(go-def-vertical)
+au FileType go nmap <Leader>t <Plug>(go-def-tab)
+
+au FileType go nmap <Leader>i <Plug>(go-info)
+
+au FileType go nmap  <leader>r  <Plug>(go-run)
+au FileType go nmap  <leader>b  <Plug>(go-build)
+
+au FileType go nmap <Leader>d <Plug>(go-doc)
+
+""" Ultisnips
+
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res == 0
+        if pumvisible()
+            return "\<C-N>"
+        else
+            return "\<TAB>"
+        endif
+    endif
+
+    return ""
+endfunction
+
+function! g:UltiSnips_Reverse()
+    call UltiSnips#JumpBackwards()
+    if g:ulti_jump_backwards_res == 0
+        return "\<C-P>"
+    endif
+
+    return ""
+endfunction
+
+
+if !exists("g:UltiSnipsJumpForwardTrigger")
+    let g:UltiSnipsJumpForwardTrigger = "<tab>"
+endif
+
+if !exists("g:UltiSnipsJumpBackwardTrigger")
+    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+endif
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"

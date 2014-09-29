@@ -44,3 +44,9 @@ export LS_COLORS
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/gocode
+export GOBIN=$GOPATH/bin
+
+export PATH=$PATH:$GOBIN
