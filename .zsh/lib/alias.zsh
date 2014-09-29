@@ -22,7 +22,7 @@ alias cpz='rsync -PrlpEz'
 # LS
 alias l='ls -Xp --color=auto'
 alias ls='ls -Xp --color=auto'
-alias ll='ls++'
+alias ll='ls -alh'
 
 # MKDIR
 alias mk='mkdir -p'
@@ -60,3 +60,4 @@ alias duch='du -ch | grep insgesamt |\
 
 # node.js harmony
 alias node='node --harmony --harmony_typeof'
+alias sn='supernova'
