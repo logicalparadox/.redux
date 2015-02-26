@@ -49,6 +49,7 @@ set nocompatible
         Plugin 'scrooloose/nerdtree'
         Plugin 'scrooloose/nerdcommenter'
         Plugin 'junegunn/goyo.vim'
+        Plugin 'godlygeek/tabular'
 
         " Bells
         Plugin 'tpope/vim-fugitive'
@@ -65,6 +66,7 @@ set nocompatible
         Plugin 'plasticboy/vim-markdown'
         Plugin 'honza/dockerfile.vim'
         Plugin 'fatih/vim-go'
+        Plugin 'kylef/apiblueprint.vim'
 
     """ }}}
 

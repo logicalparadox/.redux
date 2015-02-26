@@ -42,6 +42,8 @@ export LS_COLORS
 # Paths
 #=-=-=-=-
 
+export PATH=$PATH:$HOME/.bin
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
@@ -50,3 +52,6 @@ export GOPATH=$HOME/gocode
 export GOBIN=$GOPATH/bin
 
 export PATH=$PATH:$GOBIN
+
+# added by travis gem
+[ -f /home/paradox/.travis/travis.sh ] && source /home/paradox/.travis/travis.sh
