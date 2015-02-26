@@ -35,9 +35,6 @@ for r in $HOME/.zsh/*.zsh; do
   source $r
 done
 
-eval $( dircolors -b $HOME/.zsh/LS_COLORS )
-export LS_COLORS
-
 #=-=-=-=-
 # Paths
 #=-=-=-=-

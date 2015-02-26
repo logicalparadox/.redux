@@ -20,8 +20,15 @@ alias cpp='rsync -PrlpE'
 alias cpz='rsync -PrlpEz'
 
 # LS
-alias l='ls -Xp --color=auto'
-alias ls='ls -Xp --color=auto'
+if whence dircolors > /dev/null; then
+  eval "$(dircolors -b)"
+  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+  alias ls="ls --color"
+else 
+  export CLICOLOR=1
+  zstyle ':completion:*:default' list-colors ''
+fi
+
 alias ll='ls -alh'
 
 # MKDIR

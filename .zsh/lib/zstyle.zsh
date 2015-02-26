@@ -31,7 +31,7 @@ zstyle ':vcs_info:*' nvcsformats   ""                           "%~"
 zstyle ':completion:*'                       accept-exact '*(N)'
 zstyle ':completion:*'                       separate-sections 'yes'
 zstyle ':completion:*'                       list-dirs-first true
-zstyle ':completion:*:default'               list-colors ${(s.:.)LS_COLORS}
+# zstyle ':completion:*:default'               list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*'                       menu select=200
 zstyle ':completion:*'                       use-perl=1
 zstyle ':completion:*'                       my-accounts='m@japh.se'
