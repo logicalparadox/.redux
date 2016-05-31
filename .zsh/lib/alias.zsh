@@ -66,5 +66,6 @@ alias duch='du -ch | grep insgesamt |\
   sed -e "s_[0-9]*,[0-9]*[B|G|K|M|T]_\x1b[32m&\x1b[0m_"'
 
 # node.js harmony
-alias node='node --harmony --harmony_typeof'
+# alias node='node --harmony --harmony_typeof'
 alias sn='supernova'
+alias fig='docker-compose'

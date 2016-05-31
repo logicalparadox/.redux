@@ -53,20 +53,19 @@ set nocompatible
 
         " Bells
         Plugin 'tpope/vim-fugitive'
-        Plugin 'Valloric/YouCompleteMe'
-        Plugin 'SirVer/ultisnips'
+        " Plugin 'Valloric/YouCompleteMe'
+        " Plugin 'SirVer/ultisnips'
         Plugin 'majutsushi/tagbar'
 
         " Language support
         Plugin 'digitaltoad/vim-jade'
         Plugin 'jelera/vim-javascript-syntax'
-        Plugin 'wting/rust.vim'
+        Plugin 'rust-lang/rust.vim'
         Plugin 'justinmk/vim-syntax-extra'
         Plugin 'dart-lang/dart-vim-plugin'
         Plugin 'plasticboy/vim-markdown'
         Plugin 'honza/dockerfile.vim'
         Plugin 'fatih/vim-go'
-        Plugin 'kylef/apiblueprint.vim'
 
     """ }}}
 
@@ -153,6 +152,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType c,cpp,javahp,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 """ Theme optsion
+set background=dark
 colorscheme hybrid
 
 """ Indent/unident block (,]) (,[)
@@ -266,7 +266,6 @@ let g:EasyMotion_leader_key = 'm'
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "gofmt"
 
-
 au FileType go nmap gd <Plug>(go-def)
 au FileType go nmap <Leader>s <Plug>(go-def-split)
 au FileType go nmap <Leader>v <Plug>(go-def-vertical)
@@ -302,15 +301,3 @@ function! g:UltiSnips_Reverse()
 
     return ""
 endfunction
-
-
-if !exists("g:UltiSnipsJumpForwardTrigger")
-    let g:UltiSnipsJumpForwardTrigger = "<tab>"
-endif
-
-if !exists("g:UltiSnipsJumpBackwardTrigger")
-    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-endif
-
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
